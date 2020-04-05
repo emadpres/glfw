@@ -19,6 +19,7 @@ project "GLFW"
 		"src/vulkan.c",
 		"src/window.c"
 	}
+
 	filter "system:linux"
 		pic "On"
 
@@ -72,5 +73,9 @@ project "GLFW"
 		symbols "on"
 
 	filter "configurations:Release"
+		runtime "Release"
+		optimize "on"
+	
+	filter "configurations:Dist"
 		runtime "Release"
 		optimize "on"
