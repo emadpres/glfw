@@ -3,6 +3,8 @@
 project "GLFW"
 	kind "StaticLib"
 	language "C"
+	staticruntime "on"
+	systemversion "latest"
 
     targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
@@ -22,9 +24,6 @@ project "GLFW"
 
 	filter "system:linux"
 		pic "On"
-
-		systemversion "latest"
-		staticruntime "On"
 
 		files
 		{
@@ -46,8 +45,6 @@ project "GLFW"
 		}
 
 	filter "system:windows"
-		systemversion "latest"
-		staticruntime "On"
 
 		files
 		{
